@@ -13,17 +13,16 @@ h3 {
   padding-top: 5px;
 }
 
-#home {
+body {
   background-image: url("../images/image5.gif");
   background-size: cover;
   width: 100%;
   height: 100vh;
   padding: 0;
   margin: 0;
-}
-
-#projects {
-  background-color: #39324d;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #pheader {
@@ -31,19 +30,172 @@ h3 {
   color: white;
   font-family: "Courier New", Courier, monospace;
   font-size: 300%;
-  padding-top: 500px;
 }
 
 .navbar {
   background-color: #ff9999 !important;
 }
 
-img {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  margin: 0px 10px 30px 20px;
-}
 #images {
   text-align: center;
 }
+
+.container {
+  position: relative;
+  width: 1160px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  margin: auto;
+}
+.container .box {
+  position: relative;
+  width: 275px;
+  height: 275px;
+  background: #000;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  margin-right: 15px;
+  margin-top: 45px;
+}
+.container:hover .box {
+  transform: rotateY(25deg);
+}
+.container .box:hover ~ .box {
+  transform: rotateY(-25deg);
+}
+.container .box:hover {
+  transform: rotateY(0deg) scale(1.25);
+  z-index: 1;
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+}
+.container .box .imgBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .box .imgBx:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #ff9999, #000);
+  z-index: 1;
+  opacity: 0;
+  transition: 0.5s;
+  mix-blend-mode: multiply;
+}
+.container .box:hover .imgBx:before {
+  opacity: 1;
+}
+.container .box .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .box .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  padding: 20px;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+.container .box .content h2 {
+  color: #fff;
+  transition: 0.5s;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-size: 20px;
+  transform: translateY(200px);
+  transition-delay: 0.3s;
+}
+.container .box:hover .content h2 {
+  transform: translateY(0px);
+}
+.container .box .content p {
+  color: #fff;
+  transition: 0.5s;
+  font-size: 14px;
+  transform: translateY(200px);
+  transition-delay: 0.4s;
+}
+.container .box:hover .content p {
+  transform: translateY(0px);
+}
+
+hr {
+  width: 15%;
+  margin: auto;
+  color: white;
+  border-top: 5px solid;
+  margin-bottom: 100px;
+
+}
+
+#aspen{
+  border-radius: 50%;
+  height: 225px;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+#introduction {
+  color: white;
+  font-size: 150%;
+  text-align: center;
+  margin-top: 50px;
+  border-radius: 5%;
+}
+#aboutme {
+  color: white;
+  font-size: 150%;
+  background-color: rgba(255, 153, 153, 0.4);
+  border-radius: 2%;
+}
+
+i{
+  font-size: 200%;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#icon {
+  margin-left: 20px;
+}
+
+.page-footer {
+  background: #ff9999;
+  margin-top: 200px;
+  border-radius: 100%;
+  
+}
+
+#footer {
+  background: #ff9999;
+  color: white;
+  height: 100px;
+}
+
+#uparrow {
+  font-size: 200%;
+}
+
